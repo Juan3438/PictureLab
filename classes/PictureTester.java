@@ -8,28 +8,37 @@
  */
 public class PictureTester
 {
+
+    static String filename = "caterpillar.jpg";
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
+    Picture water = new Picture(filename);
+    water.explore();
+    water.zeroBlue();
+    water.explore();
   }
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture(filename);
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
+  public static void testMirrorVerticalRightToLeft()
+  {
+      Picture caterpillar = new Picture(filename);
+      caterpillar.explore();
+      caterpillar.mirrorVerticalRightToLeft();
+      caterpillar.explore();
+    }
   
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture(filename);
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
@@ -50,7 +59,39 @@ public class PictureTester
     swan.edgeDetection(10);
     swan.explore();
   }
-  
+
+  public static void testKeepOnlyBlue(){
+
+      Picture pic = new Picture(filename);
+      pic.KeepOnlyBlue();
+      pic.explore();
+  }
+
+  public static void testNegate(){
+      Picture pic1 = new Picture(filename);
+      pic1.negate();
+      pic1.explore();
+  }
+
+  public static void testGrayscale(){
+      Picture pic1 = new Picture(filename);
+      pic1.grayscale();
+      pic1.explore();
+  }
+
+  public static void testfixUnderWater(){
+      Picture pic1 = new Picture(filename);
+      pic1.fixUnderWater();
+      pic1.explore();
+  }
+
+  public static void testmirrorHorizontal(){
+      Picture caterpillar = new Picture(filename);
+      caterpillar.explore();
+      caterpillar.mirrorHorizontal();
+      caterpillar.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -58,11 +99,11 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    //testNegate();
+      // testNegate();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
@@ -80,5 +121,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+    //testMirrorVerticalRightToLeft();
+      testmirrorHorizontal();
   }
 }
