@@ -9,7 +9,7 @@
 public class PictureTester
 {
 
-    static String filename = "caterpillar.jpg";
+    static String filename = "snowman.jpg";
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
@@ -92,6 +92,27 @@ public class PictureTester
       caterpillar.explore();
   }
 
+  public static void testmirrorHorizontalBottomToTop(){
+      Picture caterpillar = new Picture(filename);
+      caterpillar.explore();
+      caterpillar.mirrorHorizontalBottomToTop();
+      caterpillar.explore();
+  }
+
+  public static void testmirrorDiagonal(){
+      Picture caterpillar = new Picture(filename);
+      caterpillar.explore();
+      caterpillar.mirrorDiagonal();
+      caterpillar.explore();
+  }
+
+  public static void testMirrorArms(){
+      Picture caterpillar = new Picture(filename);
+      caterpillar.explore();
+      caterpillar.mirrorArms();
+      caterpillar.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -108,7 +129,7 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
-    //testMirrorArms();
+    testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
@@ -122,6 +143,9 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
     //testMirrorVerticalRightToLeft();
-      testmirrorHorizontal();
+      //testmirrorHorizontal();
+     // testmirrorHorizontalBottomToTop();
+     // testmirrorDiagonal();
+
   }
 }
